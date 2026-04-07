@@ -1,0 +1,121 @@
+/* --- AREA DASAR --- */
+.main-content { background-color: #ffffff; padding: 60px 0; }
+
+.contact-flex-layout {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- KOTAK KIRI (INFO) --- */
+.info-card-box {
+    flex: 1;
+    background-color: #f9f2f7;
+    border-radius: 25px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-area { height: 230px; width: 100%; border-bottom: 2px solid rgba(133, 47, 106, 0.1); }
+.info-content-text { padding: 30px; }
+.info-header { display: flex; gap: 12px; margin-bottom: 20px; }
+.info-header i { color: #852F6A; font-size: 1.3rem; margin-top: 3px; }
+.info-label strong { display: block; color: #852F6A; font-size: 0.95rem; margin-bottom: 4px; }
+.info-label p { font-size: 0.85rem; color: #666; line-height: 1.5; }
+
+.detail-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+.detail-item i { color: #852F6A; font-size: 1.1rem; width: 20px; text-align: center; }
+.detail-data small { display: block; font-size: 0.7rem; color: #852F6A; opacity: 0.7; font-weight: 600; }
+.detail-data span { font-size: 0.9rem; font-weight: 700; color: #852F6A; }
+
+.social-connect-footer { margin-top: 20px; padding-top: 15px; border-top: 1px solid rgba(133, 47, 106, 0.1); }
+.social-circles { display: flex; gap: 10px; }
+.social-circles a {
+    width: 35px; height: 35px; background: #852F6A; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1rem; transition: 0.3s;
+}
+.social-circles a:hover { background: #f7e018; color: #852F6A; transform: translateY(-3px); }
+
+/* --- KOTAK KANAN (FORM) --- */
+.form-card-box {
+    flex: 1.3;
+    background-color: #852F6A;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(133, 47, 106, 0.2);
+}
+
+.form-banner-top { padding: 30px 35px 5px 35px; color: white; }
+.form-banner-top h3 { font-weight: 800; font-size: 1.5rem; margin: 0; }
+.form-banner-top p { font-size: 0.85rem; opacity: 0.8; margin-top: 5px; }
+
+.booking-form-vertical { padding: 20px 35px 35px 35px; display: flex; flex-direction: column; gap: 15px; }
+
+.form-group { display: flex; flex-direction: column; width: 100%; }
+.form-group label { color: white; font-weight: 600; margin-bottom: 6px; font-size: 0.8rem; }
+
+/* --- PERBAIKAN WARNA SELECT (DROPDOWN) --- */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    border: none; 
+    padding: 12px 15px;
+    font-size: 0.9rem; 
+    font-family: 'Montserrat', sans-serif; 
+    outline: none; 
+    width: 100%;
+    color: #852F6A; /* Teks default Ungu */
+}
+
+/* Pastikan pilihan di dalam list juga Ungu */
+.form-group select option {
+    color: #852F6A; 
+    background-color: #ffffff;
+}
+
+/* --- TRICK UNTUK MENGUBAH WARNA SOROTAN (HOVER) MENJADI UNGU TIPIS --- */
+/* Menggunakan box-shadow inset untuk menimpa warna abu-abu bawaan browser */
+.form-group select option:hover,
+.form-group select option:focus,
+.form-group select option:active,
+.form-group select option:checked {
+    background-color: #f2e6ef !important; /* Warna Ungu Tipis */
+    color: #852F6A !important;
+    box-shadow: 0 0 10px 100px #f2e6ef inset !important;
+}
+
+/* Menghilangkan warna abu-abu pada pilihan pertama (placeholder) */
+.form-group select:focus,
+.form-group select:active {
+    color: #852F6A;
+}
+
+/* Biar pas baru buka halaman, teks select tetap ungu */
+select {
+    color: #852F6A !important;
+}
+
+/* Tombol Kirim */
+.form-action-btn-right { display: flex; justify-content: flex-end; margin-top: 5px; }
+.btn-submit-booking {
+    background-color: #f7e018; color: #852F6A; padding: 12px 50px; 
+    border-radius: 10px; border: none; font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.btn-submit-booking:hover { transform: scale(1.05); box-shadow: 0 5px 15px rgba(247, 224, 24, 0.3); }
+
+/* ANIMASI & LAINNYA */
+.reveal { transform: translateY(20px); opacity: 0; transition: 0.6s ease; }
+.reveal.active { transform: translateY(0); opacity: 1; }
+.wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; z-index: 999; text-decoration: none; }
+
+@media (max-width: 900px) {
+    .contact-flex-layout { flex-direction: column; }
+    .form-card-box, .info-card-box { width: 100%; }
+}
